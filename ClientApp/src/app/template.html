@@ -1,0 +1,80 @@
+<!--<div class="bg-info p-a-1">
+  Model zawiera {{model.getProducts().length}} produktów.
+</div>-->
+<!--<div [ngClass]="'p-a-1 ' + getClasses()">
+  Witaj, świecie!
+</div>
+<div class="form-group m-t-1">
+  <label>Produkt</label>
+  <input class="form-control" [value]="model.getProduct(1)?.name || 'Brak'" />
+</div>-->
+<!--<div [ngClass]="'p-a-1 ' + getClasses()" [textContent]="'Produkt: ' + (model.getProduct(1)?.name || 'Brak')">
+
+</div>-->
+<!--<div [ngClass]="'p-a-1 ' + getClasses()">
+  Produkt: {{model.getProduct(1)?.name || 'Brak'}}
+</div>-->
+<!--<table class="table table-sm table-bordered table-striped m-t-1">
+  <tr>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+  </tr>
+  <tr>
+    <td [attr.colspan]="model.getProducts().length">
+      {{model.getProduct(1)?.name || 'Brak'}}
+    </td>
+  </tr>
+</table>-->
+<!--<div [class]="getClasses(1)">
+  Pierwszy produkt to {{model.getProduct(1).name}}
+</div>-->
+<!--<div [class]="getClasses(2)">
+  Drugi produkt to {{model.getProduct(2).name}}
+</div>-->
+<!--<div class="p-a-1" [class.bg-success]="model.getProduct(2).price < 50" [class.bg-info]="model.getProduct(2).price >= 50">
+  Drugi produkt to {{model.getProduct(2).name}}
+</div>-->
+
+<!--<div class="p-a-1" [ngClass]="getClassMap(1)">
+  Pierwszy produkt to {{model.getProduct(1).name}}
+</div>
+
+<div class="p-a-1" [ngClass]="getClassMap(2)">
+  Drugi produkt to {{model.getProduct(2).name}}
+</div>
+
+<div class="p-a-1" [ngClass]="{'bg-success': model.getProduct(3).price < 50, 'bg-info': model.getProduct(3).price >= 50}">
+  Trzeci produkt to {{model.getProduct(3).name}}
+</div>-->
+
+
+<!--<div class="p-a-1 bg-warning">
+  Tutaj <span [style.fontSize]="fontSizeWithUnits">Pierwszy</span>
+  produkt to {{model.getProduct(1).name}}.
+</div>
+
+<div class="p-a-1 bg-info">
+  Tutaj <span [style.fontSize.px]="fontSizeWithoutUnits">drugi</span>
+  produkt to {{model.getProduct(2).name}}.
+</div>-->
+
+<!--<div class="p-a-1 bg-warning">
+  <span [ngStyle]="getStyles(1)">Pierwszy</span>
+  produkt to {{model.getProduct(1).name}}.
+</div>
+
+<div class="p-a-1 bg-warning">
+  <span [ngStyle]="getStyles(2)">Drugi</span>
+  produkt to {{model.getProduct(1).name}}.
+</div>-->
+
+<div [ngClass]="getClassesByPosition(0)">
+    Pierwszy produkt to {{getProductByPosition(0).name}}.
+</div>
+
+<div [ngClass]="getClassesByPosition(1)">
+  Drugi produkt to {{getProductByPosition(1).name}}.
+</div>
