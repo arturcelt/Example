@@ -1,80 +1,97 @@
 <!--<div class="bg-info p-a-1">
-  Model zawiera {{model.getProducts().length}} produktów.
+  Mamy {{getProductCount()}} produktów.
 </div>-->
-<!--<div [ngClass]="'p-a-1 ' + getClasses()">
-  Witaj, świecie!
+<!--<div *ngIf="getProductCount() > 4" class="bg-info p-a-1 m-t-1">
+  Model zawiera więcej niż 4 produkty
 </div>
-<div class="form-group m-t-1">
-  <label>Produkt</label>
-  <input class="form-control" [value]="model.getProduct(1)?.name || 'Brak'" />
-</div>-->
-<!--<div [ngClass]="'p-a-1 ' + getClasses()" [textContent]="'Produkt: ' + (model.getProduct(1)?.name || 'Brak')">
 
+<div *ngIf="getProductByPosition(0).name != 'Kajak'" class="bg-info p-a-1 m-t-1">
+  Pierwszym produktem nie jest Kajak
+</div>
+
+<div class="bg-info p-a-1 m-t-1" [ngSwitch]="getProductCount()">
+  <span *ngSwitchCase="2">Mamy dwa produkty.</span>
+  <span *ngSwitchCase="5">Mamy pięć produktów.</span>
+  <span *ngSwitchDefault>To jest wartość domyślna.</span>
 </div>-->
-<!--<div [ngClass]="'p-a-1 ' + getClasses()">
-  Produkt: {{model.getProduct(1)?.name || 'Brak'}}
+<!--<div class="bg-info p-a-1 m-t-1" [ngSwitch]="getProduct(1).name">
+  <span *ngSwitchCase="targetName">Kajak</span>
+  <span *ngSwitchCase="'Kamizelka ratunkowa'">Kamizelka ratunkowa</span>
+  <span *ngSwtichDefault>Inny produkt</span>
 </div>-->
-<!--<table class="table table-sm table-bordered table-striped m-t-1">
+<!--<table class="table table-sm table-bordered m-t-1">
   <tr>
-    <th>1</th>
-    <th>2</th>
-    <th>3</th>
-    <th>4</th>
-    <th>5</th>
+    <th>Produkt</th>
+    <th>Kategoria</th>
+    <th>Cena</th>
   </tr>
-  <tr>
-    <td [attr.colspan]="model.getProducts().length">
-      {{model.getProduct(1)?.name || 'Brak'}}
-    </td>
+  <tr *ngFor="let item of getProducts()">
+    <td>{{item.name}}</td>
+    <td>{{item.category}}</td>
+    <td>{{item.price}}</td>
   </tr>
 </table>-->
-<!--<div [class]="getClasses(1)">
-  Pierwszy produkt to {{model.getProduct(1).name}}
-</div>-->
-<!--<div [class]="getClasses(2)">
-  Drugi produkt to {{model.getProduct(2).name}}
-</div>-->
-<!--<div class="p-a-1" [class.bg-success]="model.getProduct(2).price < 50" [class.bg-info]="model.getProduct(2).price >= 50">
-  Drugi produkt to {{model.getProduct(2).name}}
-</div>-->
+<!--<table class="table table-sm table-bordered m-t-1">
+  <tr>
+    <th></th>
+    <th>Produkt</th>
+    <th>Kategoria</th>
+    <th>Cena</th>
 
-<!--<div class="p-a-1" [ngClass]="getClassMap(1)">
-  Pierwszy produkt to {{model.getProduct(1).name}}
+  </tr>
+  <tr *ngFor="let item of getProducts(); let i = index; let odd = odd;" [class.bg-primary]="odd" [class.bg-info]="!odd">
+    <td>{{i + 1}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.category}}</td>
+    <td>{{item.price}}</td>
+  </tr>
+</table>-->
+<!--<table class="table table-sm table-bordered m-t-1">
+  <tr>
+    <th></th>
+    <th>Produkt</th>
+    <th>Kategoria</th>
+    <th>Cena</th>
+
+  </tr>
+  <tr *ngFor="let item of getProducts(); let i = index; let odd = odd; let first = first; let last = last; trackBy: getKey" [class.bg-primary]="odd" [class.bg-info]="!odd" [class.bg-warning]="first || last">
+    <td>{{i + 1}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.category}}</td>
+    <td *ngIf="!last">{{item.price}}</td>
+  </tr>
+</table>-->
+<!--<ng-template #titleTemplate>
+  <h4 class="p-a-1 bg-success">Powtórzona treść</h4>
+</ng-template>
+
+<ng-template [ngTemplateOutlet]="titleTemplate"></ng-template>
+
+<div class="bg-info p-a-1 m-a-1">
+  Mamy {{getProductCount()}} produktów.
+</div>-->
+<!--<ng-template [ngTemplateOutlet]="titleTemplate"></ng-template>-->
+
+<ng-template #titleTemplate let-text="title">
+  <h4 class="p-a-1 bg-success">{{text}}</h4>
+</ng-template>
+
+<ng-template [ngTemplateOutlet]="titleTemplate" [ngTemplateOutletContext]="{ title: 'Nagłówek' }"></ng-template>
+
+<div class="bg-info p-a-1 m-a-1">
+  Mamy {{getProductCount()}} produktów.
 </div>
 
-<div class="p-a-1" [ngClass]="getClassMap(2)">
-  Drugi produkt to {{model.getProduct(2).name}}
-</div>
+<ng-template [ngTemplateOutlet]="titleTemplate" [ngTemplateOutletContext]="{ title: 'Stopka' }"></ng-template>
 
-<div class="p-a-1" [ngClass]="{'bg-success': model.getProduct(3).price < 50, 'bg-info': model.getProduct(3).price >= 50}">
-  Trzeci produkt to {{model.getProduct(3).name}}
+<!--<div class="bg-info p-a1">
+  Licznik: {{counter = counter + 1}}
 </div>-->
 
-
-<!--<div class="p-a-1 bg-warning">
-  Tutaj <span [style.fontSize]="fontSizeWithUnits">Pierwszy</span>
-  produkt to {{model.getProduct(1).name}}.
-</div>
-
-<div class="p-a-1 bg-info">
-  Tutaj <span [style.fontSize.px]="fontSizeWithoutUnits">drugi</span>
-  produkt to {{model.getProduct(2).name}}.
+<!--<div class="bg-info p-a-1">
+  Następny produkt to {{nextProduct.name}}.
 </div>-->
 
-<!--<div class="p-a-1 bg-warning">
-  <span [ngStyle]="getStyles(1)">Pierwszy</span>
-  produkt to {{model.getProduct(1).name}}.
-</div>
-
-<div class="p-a-1 bg-warning">
-  <span [ngStyle]="getStyles(2)">Drugi</span>
-  produkt to {{model.getProduct(1).name}}.
-</div>-->
-
-<div [ngClass]="getClassesByPosition(0)">
-    Pierwszy produkt to {{getProductByPosition(0).name}}.
-</div>
-
-<div [ngClass]="getClassesByPosition(1)">
-  Drugi produkt to {{getProductByPosition(1).name}}.
+<div class="bg-info p-a-1">
+  Cena po zaokrągleniu wynosi {{getProductPrice(1)}} zł.
 </div>
