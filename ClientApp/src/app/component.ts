@@ -12,6 +12,7 @@ import { ProductFormGroup } from "./form.model";
 export class ProductComponent {
   model: Model = new Model();
   form: ProductFormGroup = new ProductFormGroup();
+  showTable: boolean = true;
 
   formSubmitted: boolean = false;
 
