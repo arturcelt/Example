@@ -56,8 +56,8 @@ var ProductFormGroup = /** @class */ (function (_super) {
     function ProductFormGroup() {
         return _super.call(this, {
             name: new ProductFormControl("Produkt", "name", "", forms_1.Validators.required),
-            category: new ProductFormControl("Kategoria", "category", "", forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern("^[A-Za-z ]+$"), forms_1.Validators.minLength(3), forms_1.Validators.maxLength(10)])),
-            price: new ProductFormControl("Cena", "price", "", forms_1.Validators.compose([forms_1.Validators.required, limit_formvalidator_1.LimitValidator.Limit(100), forms_1.Validators.pattern("^[0-9]\.]+$")]))
+            category: new ProductFormControl("Kategoria", "category", "", forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern('^[A-Za-z łżóąćźżśę]+$'), forms_1.Validators.minLength(3), forms_1.Validators.maxLength(80)])),
+            price: new ProductFormControl("Cena", "price", "", forms_1.Validators.compose([forms_1.Validators.required, limit_formvalidator_1.LimitValidator.Limit(100), forms_1.Validators.pattern('^[0-9\.]+$')]))
         }) || this;
     }
     Object.defineProperty(ProductFormGroup.prototype, "productControls", {
