@@ -1,4 +1,4 @@
-<div class="checkbox">
+<!--<div class="checkbox">
   <label>
     <input type="checkbox" [(ngModel)]="showTable" />
     Pokaż tabelę
@@ -19,8 +19,55 @@
       <td [pa-attr]="item.category == 'Piłka nożna'? 'bg-info': null">{{item.category}}</td>
       <td [pa-attr]="'bg-info'">{{item.price}}</td>
     </tr>
-  </table>
+  </table>-->
+<!--<div class="checkbox">
+  <label>
+    <input type="checkbox" [(ngModel)]="showTable" />
+    Pokaż tabelę
+  </label>
+</div>
 
-  
+
+<table class="table table-sm table-bordered table-striped" *paIf="showTable">
+  <tr>
+    <th></th>
+    <th>Produkt</th>
+    <th>Kategoria</th>
+    <th>Cena</th>
+  </tr>
+  <ng-template [paForOf]="getProducts()" let-item let-i="index" let-odd="odd" let-even="even">
+    <tr [class.bg-info]="odd" [class.bg-warning]="even">
+      <td>{{i+ 1}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.category}}</td>
+      <td>{{item.price}}</td>
+    </tr>
+  </ng-template>
+</table>-->
 
 
+
+
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox" [(ngModel)]="showTable" />
+    Pokaż tabelę
+  </label>
+</div>
+
+
+<table class="table table-sm table-bordered table-striped" *paIf="showTable">
+  <tr>
+    <th></th>
+    <th>Produkt</th>
+    <th>Kategoria</th>
+    <th>Cena</th>
+  </tr>
+    <tr *paFor="let item of getProducts() let i = index; let odod = odd; let even = even" [class.bg-info]="odd" [class.bg-warning]="even">
+      <td>{{i+ 1}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.category}}</td>
+      <td>{{item.price}}</td>
+    </tr>
+</table>

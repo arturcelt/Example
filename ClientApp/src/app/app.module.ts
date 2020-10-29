@@ -42,10 +42,11 @@ import { PaAttrDirective } from "./attr.directive";
 import { PaModel } from "./twoway.directive";
 import { PaStructureDirective } from "./structure.directive";
 import { CommonModule } from '@angular/common';
+import { PaIteratorDirective } from "./iterator.directive";
 
 @NgModule({
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, CommonModule],
-  declarations: [ProductComponent, PaAttrDirective, PaModel, PaStructureDirective],
+  declarations: [ProductComponent, PaAttrDirective, PaModel, PaStructureDirective, PaIteratorDirective],
   bootstrap: [ProductComponent]
 })
 export class AppModule { }
