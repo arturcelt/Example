@@ -11,11 +11,26 @@ export class PaIteratorDirective {
   dataSource: any;
 
   ngOnInit() {
+    this.updateContent();
+    //this.container.clear();
+    //for (let i = 0; i < this.dataSource.length; i++) {
+    //  this.container.createEmbeddedView(this.template, new PaIteratorContext(this.dataSource[i], i, this.dataSource.length));
+    //}
+  }
+
+
+  ngDoCheck() {
+    console.log("Wywołanie metody ngDoCheck().");
+    this.updateContent();
+  }
+
+  updateContent() {
     this.container.clear();
     for (let i = 0; i < this.dataSource.length; i++) {
       this.container.createEmbeddedView(this.template, new PaIteratorContext(this.dataSource[i], i, this.dataSource.length));
     }
   }
+
 }
 
 class PaIteratorContext {
@@ -30,10 +45,10 @@ class PaIteratorContext {
     this.first = index == 0;
     this.last = index == total - 1;
 
-    setInterval(() => {
-      this.odd = !this.odd;
-      this.even = !this.even;
-      this.$implicit.price++;
-    }, 2000);
+    //setInterval(() => {
+    //  this.odd = !this.odd;
+    //  this.even = !this.even;
+    //  this.$implicit.price++;
+    //}, 2000);
   }
 }
