@@ -30,6 +30,10 @@ export class ProductComponent {
     this.model.saveProduct(product);
   }
 
+  deleteProduct(key: number) {
+    this.model.deleteProduct(key);
+  }
+
   submitForm(form: NgForm) {
     this.formSubmitted = true;
     if (form.valid) {

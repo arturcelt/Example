@@ -1,17 +1,20 @@
-import { Directive, ViewContainerRef, TemplateRef, Input, SimpleChange } from "@angular/core";
+import { Directive, ViewContainerRef, TemplateRef, Input, SimpleChange, IterableDiffer, IterableDiffers, ChangeDetectorRef, CollectionChangeRecord, DefaultIterableDiffer } from "@angular/core";
 
 
 @Directive({
   selector: "[paForOf]"
 })
 export class PaIteratorDirective {
-  constructor(private container: ViewContainerRef, private template: TemplateRef<Object>) { }
+  private differ: DefaultIterableDiffer<any>;
+
+  constructor(private container: ViewContainerRef, private template: TemplateRef<Object>, private differs: IterableDiffers, private changeDetector: ChangeDetectorRef) { }
 
   @Input("paForOf")
   dataSource: any;
 
   ngOnInit() {
-    this.updateContent();
+    this.differ = <DefaultIterableDiffer<any>>this.differs.find(this.dataSource).create();
+    //this.updateContent();
     //this.container.clear();
     //for (let i = 0; i < this.dataSource.length; i++) {
     //  this.container.createEmbeddedView(this.template, new PaIteratorContext(this.dataSource[i], i, this.dataSource.length));
@@ -20,16 +23,23 @@ export class PaIteratorDirective {
 
 
   ngDoCheck() {
-    console.log("Wywołanie metody ngDoCheck().");
-    this.updateContent();
-  }
-
-  updateContent() {
-    this.container.clear();
-    for (let i = 0; i < this.dataSource.length; i++) {
-      this.container.createEmbeddedView(this.template, new PaIteratorContext(this.dataSource[i], i, this.dataSource.length));
+    //console.log("Wywołanie metody ngDoCheck().");
+    //this.updateContent();
+    let changes = this.differ.diff(this.dataSource);
+    if (changes != null) {
+      console.log("Wywołanie metody ngDoCheck(), wykryto zmiany.");
+      changes.forEachAddedItem(addition => {
+        this.container.createEmbeddedView(this.template, new PaIteratorContext(addition.item, addition.currentIndex, changes.length));
+      });
     }
   }
+
+  //updateContent() {
+  //  this.container.clear();
+  //  for (let i = 0; i < this.dataSource.length; i++) {
+  //    this.container.createEmbeddedView(this.template, new PaIteratorContext(this.dataSource[i], i, this.dataSource.length));
+  //  }
+  //}
 
 }
 
