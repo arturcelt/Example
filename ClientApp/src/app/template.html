@@ -81,8 +81,14 @@
     </label>
   </div>
 
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" [(ngModel)]="darkColor" />
+      Ciemny kolor komórki
+    </label>
+  </div>
 
-  <table class="table table-sm table-bordered table-striped" *paIf="showTable">
+  <table class="table table-sm table-bordered table-striped" *paIf="showTable" [paCellDarkColor]="darkColor">
     <tr>
       <th></th>
       <th>Produkt</th>
@@ -95,7 +101,7 @@
       <td style="vertical-align: middle">{{item.category}}</td>
       <td style="vertical-align: middle">{{item.price}}</td>
       <td class="text-xs-center">
-        <button class="btn btn-danger btn-sm" (click)="deleteProduct(item.id">Usuń</button>
+        <button class="btn btn-danger btn-sm" (click)="deleteProduct(item.id)">Usuń</button>
       </td>
     </tr>
   </table>

@@ -26,6 +26,8 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\attr.directive.ts" />
+    <None Remove="ClientApp\src\app\cellColor.directive.ts" />
+    <None Remove="ClientApp\src\app\cellColorSwitcher.directive.ts" />
     <None Remove="ClientApp\src\app\component.ts" />
     <None Remove="ClientApp\src\app\datasource.model.ts" />
     <None Remove="ClientApp\src\app\form.model.ts" />
@@ -39,6 +41,8 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\attr.directive.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\cellColor.directive.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\cellColorSwitcher.directive.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\datasource.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\form.model.ts" />
