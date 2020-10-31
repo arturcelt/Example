@@ -1,6 +1,5 @@
 import { Directive, Input, Output, EventEmitter, SimpleChange, ContentChildren, QueryList } from "@angular/core";
 import { PaCellColor } from "./cellColor.directive";
-import { setTimeout } from "timers";
 
 @Directive({
   selector: "table"
