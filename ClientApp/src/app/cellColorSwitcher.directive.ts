@@ -1,5 +1,6 @@
 import { Directive, Input, Output, EventEmitter, SimpleChange, ContentChildren, QueryList } from "@angular/core";
 import { PaCellColor } from "./cellColor.directive";
+import { setTimeout } from "timers";
 
 @Directive({
   selector: "table"
@@ -14,6 +15,12 @@ export class PaCellColorSwitcher {
 
   ngOnChanges(changes: { [property: string]: SimpleChange }) {
     this.updateContentChildren(changes["modelProperty"].currentValue)
+  }
+
+  ngAfterContentInit() {
+    this.contentChildren.changes.subscribe(() => {
+      setTimeout(() => this.updateContentChildren(this.modelProperty), 0);
+    })
   }
 
   private updateContentChildren(dark: boolean) {
