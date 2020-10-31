@@ -2,8 +2,8 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "paProductForm",
-  template: "<div>To jest komponent formularza </div>"
+  template: "<div>{{model}}</div>"
 })
 export class ProductFormComponent {
-
+  model: string = "To jest model.";
 }
