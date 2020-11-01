@@ -8,7 +8,7 @@ import { ProductFormGroup } from "./form.model";
 @Component({
   selector: "app-root",
   templateUrl: "template.html",
-  styles: ["div { border: 2px black solid; font-style:italic }"]
+  styles: ["/deep/ div { border: 2px black solid; font-style:italic }"]
   
 })
 export class ProductComponent {
