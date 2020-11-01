@@ -1,8 +1,8 @@
 
 <div class="bg-info m-a-1 p-a-1">
-  <div>Data utworzona na podstawie obiektu: {{ dateObject | date}}.</div>
-  <div>Data utworzona na podstawie ciągu tekstowego: {{ dateString| date}}.</div>
-  <div>Data utworzona na podstawie liczby: {{ dateNumber | date }}.</div>
+  <div>Data utworzona na podstawie obiektu: {{ dateObject | date:"shortDate"}}.</div>
+  <div>Data utworzona na podstawie ciągu tekstowego: {{ dateString| date:"mediumDate"}}.</div>
+  <div>Data utworzona na podstawie liczby: {{ dateNumber | date:"longDate" }}.</div>
 </div>
 
 <table class="table table-sm table-bordered table-striped">
@@ -14,8 +14,8 @@
   </tr>
   <tr *paFor="let item of getProducts() | filter:categoryFilter let i = index; let odod = odd; let even = even" [class.bg-info]="odd" [class.bg-warning]="even">
     <td style="vertical-align: middle">{{i+ 1}}</td>
-    <td style="vertical-align: middle">{{item.name}}</td>
-    <td style="vertical-align: middle">{{item.category}}</td>
+    <td style="vertical-align: middle">{{item.name | uppercase}}</td>
+    <td style="vertical-align: middle">{{item.category | lowercase}}</td>
     <td style="vertical-align: middle">{{item.price | addTax:(taxRate || 0) | currency:"zł":"symbol":"2.2-2" }}</td>
     <td class="text-xs-center">
       <button class="btn btn-danger btn-sm" (click)="deleteProduct(item.id)">Usuń</button>
