@@ -1,13 +1,8 @@
 
-<div>
-  <label>Stawka podatku</label>
-  <select [value]="taxRate || 0" (change)="taxRate=$event.target.value">
-    <option value="0">None</option>
-    <option value="10">{{ 0.1 | percent }}</option>
-    <option value="20">{{ 0.2 | percent }}</option>
-    <option value="50">{{ 0.5 | percent }}</option>
-    <option value="150">{{ 1.5 | percent }}</option>
-  </select>
+<div class="bg-info m-a-1 p-a-1">
+  <div>Data utworzona na podstawie obiektu: {{ dateObject | date}}.</div>
+  <div>Data utworzona na podstawie ciągu tekstowego: {{ dateString| date}}.</div>
+  <div>Data utworzona na podstawie liczby: {{ dateNumber | date }}.</div>
 </div>
 
 <table class="table table-sm table-bordered table-striped">
