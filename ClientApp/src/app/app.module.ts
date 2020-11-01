@@ -21,6 +21,7 @@ registerLocaleData(localePl);
 @NgModule({
   providers: [{
     provide: LOCALE_ID,
+    //useValue: "en-US"
     useValue: 'pl-PL'
   }
   ],
