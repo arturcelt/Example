@@ -1,8 +1,6 @@
 
 <div class="bg-info m-a-1 p-a-1">
-  <div>Data utworzona na podstawie obiektu: {{ dateObject | date:"shortDate"}}.</div>
-  <div>Data utworzona na podstawie ciągu tekstowego: {{ dateString| date:"mediumDate"}}.</div>
-  <div>Data utworzona na podstawie liczby: {{ dateNumber | date:"longDate" }}.</div>
+  <div>{{getProducts() | json}}</div>
 </div>
 
 <table class="table table-sm table-bordered table-striped">
