@@ -14,6 +14,7 @@ import { ProductFormComponent } from "./productForm.component";
 import { PaToggleView } from "./toggleView.component";
 import { registerLocaleData } from '@angular/common';
 import localePl from '@angular/common/locales/pl';
+import { PaAddTaxPipe } from "./addTax.pipe";
 registerLocaleData(localePl);
 
 @NgModule({
@@ -23,7 +24,7 @@ registerLocaleData(localePl);
   }
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, CommonModule],
-  declarations: [ProductComponent, PaAttrDirective, PaModel, PaStructureDirective, PaIteratorDirective, PaCellColor, PaCellColorSwitcher, ProductTableComponent, ProductFormComponent, PaToggleView],
+  declarations: [ProductComponent, PaAttrDirective, PaModel, PaStructureDirective, PaIteratorDirective, PaCellColor, PaCellColorSwitcher, ProductTableComponent, ProductFormComponent, PaToggleView, PaAddTaxPipe],
   bootstrap: [ProductComponent]
 })
 export class AppModule { }
