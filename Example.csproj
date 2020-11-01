@@ -27,6 +27,7 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\addTax.pipe.ts" />
     <None Remove="ClientApp\src\app\attr.directive.ts" />
+    <None Remove="ClientApp\src\app\categoryFilter.pipe.ts" />
     <None Remove="ClientApp\src\app\cellColor.directive.ts" />
     <None Remove="ClientApp\src\app\cellColorSwitcher.directive.ts" />
     <None Remove="ClientApp\src\app\component.ts" />
@@ -46,6 +47,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\addTax.pipe.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\attr.directive.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\categoryFilter.pipe.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\cellColor.directive.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\cellColorSwitcher.directive.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\component.ts" />
