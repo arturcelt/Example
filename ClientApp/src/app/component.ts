@@ -7,9 +7,7 @@ import { ProductFormGroup } from "./form.model";
 
 @Component({
   selector: "app-root",
-  templateUrl: "template.html",
-  styles: ["/deep/ div { border: 2px black solid; font-style:italic }"]
-  
+  templateUrl: "template.html" 
 })
 export class ProductComponent {
   model: Model = new Model();
