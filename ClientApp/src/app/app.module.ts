@@ -19,17 +19,20 @@ import { PaAddTaxPipe } from "./addTax.pipe";
 import { PaCategoryFilterPipe } from "./categoryFilter.pipe";
 import { paDiscountDisplayComponent } from "./discountDisplay.component";
 import { PaDiscountEditorComponent } from "./discountEditor.component";
-
+import { DiscountService } from "./discount.service";
+import { PaDiscountPipe } from "./discount.pipe";
+ 
 
 @NgModule({
   providers: [{
     provide: LOCALE_ID,
     //useValue: "en-US"
     useValue: 'pl-PL'
-  }
+  },
+    DiscountService
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, CommonModule],
-  declarations: [ProductComponent, PaAttrDirective, PaModel, PaStructureDirective, PaIteratorDirective, PaCellColor, PaCellColorSwitcher, ProductTableComponent, ProductFormComponent, PaToggleView, PaAddTaxPipe, PaCategoryFilterPipe, paDiscountDisplayComponent, PaDiscountEditorComponent],
+  declarations: [ProductComponent, PaAttrDirective, PaModel, PaStructureDirective, PaIteratorDirective, PaCellColor, PaCellColorSwitcher, ProductTableComponent, ProductFormComponent, PaToggleView, PaAddTaxPipe, PaCategoryFilterPipe, paDiscountDisplayComponent, PaDiscountEditorComponent, PaDiscountPipe],
   bootstrap: [ProductComponent]
 })
 export class AppModule { }
