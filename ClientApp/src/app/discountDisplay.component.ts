@@ -9,7 +9,6 @@ Rabat wynosi {{discounter.discount}}
 
 })
 export class paDiscountDisplayComponent {
-  @Input("discounter")
-  discounter: DiscountService;
+  constructor(private discounter: DiscountService) { }
 }
 
