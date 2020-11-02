@@ -14,9 +14,12 @@ import { ProductFormComponent } from "./productForm.component";
 import { PaToggleView } from "./toggleView.component";
 import { registerLocaleData } from '@angular/common';
 import localePl from '@angular/common/locales/pl';
+registerLocaleData(localePl);
 import { PaAddTaxPipe } from "./addTax.pipe";
 import { PaCategoryFilterPipe } from "./categoryFilter.pipe";
-registerLocaleData(localePl);
+import { paDiscountDisplayComponent } from "./discountDisplay.component";
+import { PaDiscountEditorComponent } from "./discountEditor.component";
+
 
 @NgModule({
   providers: [{
@@ -26,7 +29,7 @@ registerLocaleData(localePl);
   }
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, CommonModule],
-  declarations: [ProductComponent, PaAttrDirective, PaModel, PaStructureDirective, PaIteratorDirective, PaCellColor, PaCellColorSwitcher, ProductTableComponent, ProductFormComponent, PaToggleView, PaAddTaxPipe, PaCategoryFilterPipe],
+  declarations: [ProductComponent, PaAttrDirective, PaModel, PaStructureDirective, PaIteratorDirective, PaCellColor, PaCellColorSwitcher, ProductTableComponent, ProductFormComponent, PaToggleView, PaAddTaxPipe, PaCategoryFilterPipe, paDiscountDisplayComponent, PaDiscountEditorComponent],
   bootstrap: [ProductComponent]
 })
 export class AppModule { }
