@@ -10,8 +10,8 @@ import { ProductFormGroup } from "./form.model";
   templateUrl: "template.html" 
 })
 export class ProductComponent {
-  model: Model = new Model();
-  
+  //model: Model = new Model();
+  constructor(private model: Model)
 
 
   addProduct(product: Product) {
