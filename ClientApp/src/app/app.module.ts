@@ -31,7 +31,7 @@ import { LogService, LogLevel } from "./log.service";
   providers: [{
     provide: LOCALE_ID,
     useValue: 'pl-PL'
-  }, { provide: LogService, useClass: LogService },
+  }, { provide: "logger", useClass: LogService },
     DiscountService, SimpleDataSource, Model
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, CommonModule],
