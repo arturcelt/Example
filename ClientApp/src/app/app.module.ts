@@ -24,6 +24,7 @@ import { PaDiscountPipe } from "./discount.pipe";
 import { PaDiscountAmountDirective } from "./discountAmount.directive";
 import { SimpleDataSource } from "./datasource.model";
 import { Model } from "./repository.model";
+import { LogService, LogLevel } from "./log.service";
  
 
 @NgModule({
@@ -32,7 +33,7 @@ import { Model } from "./repository.model";
     //useValue: "en-US"
     useValue: 'pl-PL'
   },
-    DiscountService, SimpleDataSource, Model
+    DiscountService, SimpleDataSource, Model, LogService
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, CommonModule],
   declarations: [ProductComponent, PaAttrDirective, PaModel, PaStructureDirective, PaIteratorDirective, PaCellColor, PaCellColorSwitcher, ProductTableComponent, ProductFormComponent, PaToggleView, PaAddTaxPipe, PaCategoryFilterPipe, paDiscountDisplayComponent, PaDiscountEditorComponent, PaDiscountPipe, PaDiscountAmountDirective],
