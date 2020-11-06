@@ -21,12 +21,8 @@ export class LogService {
   logMessage(level: LogLevel, message: string) {
     if (level >= this.minimumLevel) {
       console.log(`Komunikat (${LogLevel[level]}): ${message}`);
-    }
-    
+    } 
   }
-
-
-
 }
 
 
