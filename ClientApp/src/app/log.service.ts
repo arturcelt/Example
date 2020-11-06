@@ -1,5 +1,6 @@
-import { Injectable } from "@angular/core";
+import { Injectable, InjectionToken } from "@angular/core";
 
+export const LOG_SERVICE = new InjectionToken("logger");
 export enum LogLevel { DEBUG, INFO, ERROR }
 
 @Injectable()

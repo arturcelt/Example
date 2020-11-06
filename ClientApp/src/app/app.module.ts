@@ -24,14 +24,14 @@ import { PaDiscountPipe } from "./discount.pipe";
 import { PaDiscountAmountDirective } from "./discountAmount.directive";
 import { SimpleDataSource } from "./datasource.model";
 import { Model } from "./repository.model";
-import { LogService, LogLevel } from "./log.service";
+import { LogService, LOG_SERVICE } from "./log.service";
  
 
 @NgModule({
   providers: [{
     provide: LOCALE_ID,
     useValue: 'pl-PL'
-  }, { provide: "logger", useClass: LogService },
+  }, { provide: LOG_SERVICE, useClass: LogService },
     DiscountService, SimpleDataSource, Model
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, CommonModule],
