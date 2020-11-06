@@ -1,5 +1,4 @@
 import { Injectable, InjectionToken } from "@angular/core";
-
 export const LOG_SERVICE = new InjectionToken("logger");
 export enum LogLevel { DEBUG, INFO, ERROR }
 
@@ -24,5 +23,24 @@ export class LogService {
       console.log(`Komunikat (${LogLevel[level]}): ${message}`);
     }
     
+  }
+
+
+
+}
+
+
+@Injectable()
+export class SpecjalLogService extends LogService {
+  constructor() {
+    super();
+    this.minimumLevel = LogLevel.DEBUG;
+
+  }
+
+  logMessage(level: LogLevel, message: string) {
+    if (level >= this.minimumLevel) {
+      console.log(`Komunikat specjalny (${LogLevel[level]}): ${message}`);
+    }
   }
 }
