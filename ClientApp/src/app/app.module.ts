@@ -37,11 +37,11 @@ logger.minimumLevel = LogLevel.DEBUG;
     provide: LOCALE_ID,
     useValue: 'pl-PL'
   },
-    { provide: LOG_LEVEL, useValue: LogLevel.DEBUG },
+    { provide: LOG_LEVEL, useValue: LogLevel.ERROR },
     { provide: "debugLevel", useExisting: LOG_LEVEL },
     {
       provide: LogService,
-      deps: [LOG_LEVEL],
+      deps: ["debugLevel"],
       useFactory: (level) => {
         let logger = new LogService();
         logger.minimumLevel = level;
