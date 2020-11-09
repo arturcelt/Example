@@ -24,11 +24,12 @@ import { PaDiscountPipe } from "./discount.pipe";
 import { PaDiscountAmountDirective } from "./discountAmount.directive";
 import { SimpleDataSource } from "./datasource.model";
 import { Model } from "./repository.model";
-import { LogService, LOG_SERVICE, SpecialLogService, LogLevel, LOG_LEVEL } from "./log.service";
+//import { LogService, LOG_SERVICE, SpecialLogService, LogLevel, LOG_LEVEL } from "./log.service";
 
 
-let logger = new LogService();
-logger.minimumLevel = LogLevel.DEBUG;
+
+//let logger = new LogService();
+//logger.minimumLevel = LogLevel.DEBUG;
 
 
 @NgModule({
@@ -36,17 +37,17 @@ logger.minimumLevel = LogLevel.DEBUG;
     provide: LOCALE_ID,
     useValue: 'pl-PL'
   },
-    { provide: LOG_LEVEL, useValue: LogLevel.INFO },
-    { provide: "debugLevel", useExisting: LOG_LEVEL },
-    {
-      provide: LogService,
-      deps: ["debugLevel"],
-      useFactory: (level) => {
-        let logger = new LogService();
-        logger.minimumLevel = level;
-        return logger;
-      }
-    },
+    //{ provide: LOG_LEVEL, useValue: LogLevel.INFO },
+    //{ provide: "debugLevel", useExisting: LOG_LEVEL },
+    //{
+    //  provide: LogService,
+    //  deps: ["debugLevel"],
+    //  useFactory: (level) => {
+    //    let logger = new LogService();
+    //    logger.minimumLevel = level;
+    //    return logger;
+    //  }
+    //},
     DiscountService, SimpleDataSource, Model
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, CommonModule],

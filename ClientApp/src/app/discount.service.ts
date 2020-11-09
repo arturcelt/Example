@@ -5,8 +5,9 @@ import { LogService, LOG_SERVICE, LogLevel } from "./log.service";
 @Injectable()
 export class DiscountService {
   private discountValue: number = 10;
+  private logger: LogService = new LogService();
 
-  constructor(private logger: LogService) {
+  constructor() {
     
   }
 

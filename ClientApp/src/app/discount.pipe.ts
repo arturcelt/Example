@@ -7,11 +7,11 @@ import { LogService } from "./log.service";
   pure: false
 })
 export class PaDiscountPipe {
-  constructor(private discount: DiscountService, private logger: LogService) { }
+  constructor(private discount: DiscountService) { }
 
   transform(price: number): number {
     if (price > 100) {
-      this.logger.logInfoMessage(`Obniżona wysoka cena: ${price}`);
+      //this.logger.logInfoMessage(`Obniżona wysoka cena: ${price}`);
     }
     return this.discount.applyDiscount(price);
   }

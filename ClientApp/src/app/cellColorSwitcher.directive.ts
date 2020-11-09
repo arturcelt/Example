@@ -1,6 +1,6 @@
 import { Directive, Input, Output, EventEmitter, SimpleChange, ContentChildren, QueryList } from "@angular/core";
 import { PaCellColor } from "./cellColor.directive";
-import { LogService } from "./log.service";
+import { LogService, LOG_SERVICE, SpecialLogService, LogLevel, LOG_LEVEL } from "./log.service";
 
 @Directive({
   selector: "table",
@@ -19,8 +19,10 @@ export class PaCellColorSwitcher {
   }
 
   ngAfterContentInit() {
+    console.log(this.modelProperty);
     this.contentChildren.changes.subscribe(() => {
       setTimeout(() => this.updateContentChildren(this.modelProperty), 0);
+    
     })
   }
 
