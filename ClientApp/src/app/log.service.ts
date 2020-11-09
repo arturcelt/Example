@@ -7,7 +7,7 @@ export const LOG_LEVEL = new InjectionToken("log_level");
 export class LogService {
   minimumLevel: LogLevel = LogLevel.INFO;
 
-  loginInfoMessage(message: string) {
+  logInfoMessage(message: string) {
     this.logMessage(LogLevel.INFO, message);
   }
 

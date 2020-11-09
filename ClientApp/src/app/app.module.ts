@@ -25,8 +25,7 @@ import { PaDiscountAmountDirective } from "./discountAmount.directive";
 import { SimpleDataSource } from "./datasource.model";
 import { Model } from "./repository.model";
 import { LogService, LOG_SERVICE, SpecialLogService, LogLevel, LOG_LEVEL } from "./log.service";
-import { log } from 'util';
- 
+
 
 let logger = new LogService();
 logger.minimumLevel = LogLevel.DEBUG;
@@ -37,7 +36,7 @@ logger.minimumLevel = LogLevel.DEBUG;
     provide: LOCALE_ID,
     useValue: 'pl-PL'
   },
-    { provide: LOG_LEVEL, useValue: LogLevel.ERROR },
+    { provide: LOG_LEVEL, useValue: LogLevel.INFO },
     { provide: "debugLevel", useExisting: LOG_LEVEL },
     {
       provide: LogService,

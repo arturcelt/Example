@@ -11,7 +11,7 @@ export class PaDiscountPipe {
 
   transform(price: number): number {
     if (price > 100) {
-      this.logger.loginInfoMessage(`Obniżona wysoka cena: ${price}`);
+      this.logger.logInfoMessage(`Obniżona wysoka cena: ${price}`);
     }
     return this.discount.applyDiscount(price);
   }
