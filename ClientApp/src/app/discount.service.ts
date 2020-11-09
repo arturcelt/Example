@@ -21,3 +21,5 @@ export class DiscountService {
     return Math.max(price - this.discountValue, 5);
   }
 }
+
+

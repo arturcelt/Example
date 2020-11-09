@@ -27,7 +27,7 @@ export class LogService {
 
 
 @Injectable()
-export class SpecjalLogService extends LogService {
+export class SpecialLogService extends LogService {
   constructor() {
     super();
     this.minimumLevel = LogLevel.DEBUG;
