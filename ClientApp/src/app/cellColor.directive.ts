@@ -7,7 +7,7 @@ export class PaCellColor {
   @HostBinding("class")
   bgClass: string = "";
 
-  setColor(dark: boolean) {
+  setColor(dark: Boolean) {
     this.bgClass = dark ? "bg-inverse" : "";
   }
 }

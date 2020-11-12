@@ -24,7 +24,8 @@ import { PaDiscountPipe } from "./discount.pipe";
 import { PaDiscountAmountDirective } from "./discountAmount.directive";
 import { SimpleDataSource } from "./datasource.model";
 import { Model } from "./repository.model";
-//import { LogService, LOG_SERVICE, SpecialLogService, LogLevel, LOG_LEVEL } from "./log.service";
+import { LogService, LOG_SERVICE, SpecialLogService, LogLevel, LOG_LEVEL } from "./log.service";
+import { VALUE_SERVICE, PaDisplayValueDirective } from "./valueDisplay.directive";
 
 
 
@@ -37,21 +38,13 @@ import { Model } from "./repository.model";
     provide: LOCALE_ID,
     useValue: 'pl-PL'
   },
-    //{ provide: LOG_LEVEL, useValue: LogLevel.INFO },
-    //{ provide: "debugLevel", useExisting: LOG_LEVEL },
-    //{
-    //  provide: LogService,
-    //  deps: ["debugLevel"],
-    //  useFactory: (level) => {
-    //    let logger = new LogService();
-    //    logger.minimumLevel = level;
-    //    return logger;
-    //  }
-    //},
-    DiscountService, SimpleDataSource, Model
+    { provide: LOG_LEVEL, useValue: LogLevel.ERROR },
+    { provide: "debugLevel", useExisting: LOG_LEVEL },
+    { provide: VALUE_SERVICE, useValue: "jabłka"},
+    DiscountService, SimpleDataSource, Model, LogService
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, CommonModule],
-  declarations: [ProductComponent, PaAttrDirective, PaModel, PaStructureDirective, PaIteratorDirective, PaCellColor, PaCellColorSwitcher, ProductTableComponent, ProductFormComponent, PaToggleView, PaAddTaxPipe, PaCategoryFilterPipe, paDiscountDisplayComponent, PaDiscountEditorComponent, PaDiscountPipe, PaDiscountAmountDirective],
+  declarations: [ProductComponent, PaAttrDirective, PaModel, PaStructureDirective, PaIteratorDirective, PaCellColor, PaCellColorSwitcher, ProductTableComponent, ProductFormComponent, PaToggleView, PaAddTaxPipe, PaCategoryFilterPipe, paDiscountDisplayComponent, PaDiscountEditorComponent, PaDiscountPipe, PaDiscountAmountDirective, PaDisplayValueDirective],
   bootstrap: [ProductComponent]
 })
 export class AppModule { }
