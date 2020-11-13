@@ -2,10 +2,13 @@ import { Component, Output, EventEmitter, ViewEncapsulation } from "@angular/cor
 import { Product } from "./product.model";
 import { ProductFormGroup } from "./form.model";
 import { Model } from "./repository.model";
+import { VALUE_SERVICE } from "./valueDisplay.directive";
 
 @Component({
   selector: "paProductForm",
-  templateUrl: "productForm.component.html"
+  templateUrl: "productForm.component.html",
+  providers: [{provide: VALUE_SERVICE, useValue: "pomarańcze"}]
+  
 })
 export class ProductFormComponent {
   form: ProductFormGroup = new ProductFormGroup();

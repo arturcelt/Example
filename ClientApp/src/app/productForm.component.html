@@ -10,5 +10,13 @@
   <button class="btn btn-primary m-l-1 m-r-1" type="submit" [disabled]="formSubmitted && form.invalid" [class.btn-secondary]="formSubmitted && form.invalid">Dodaj</button>
 </form>
 
+<div class="bg-info m-t-1 p-a-1">
+  Wartość widoku potomnego: <span paDisplayValue></span>
+</div>
+
+<div class="bg-info m-t-1 p-a-1">
+  Wartość treści potomnej: <ng-content></ng-content>
+</div>
+
 <paDiscountEditor></paDiscountEditor>
 <paDiscountDisplay></paDiscountDisplay>

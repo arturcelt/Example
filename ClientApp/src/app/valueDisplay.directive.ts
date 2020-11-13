@@ -7,10 +7,10 @@ export const VALUE_SERVICE = new InjectionToken("value_service");
 })
 export class PaDisplayValueDirective {
   constructor(@Inject(VALUE_SERVICE) serviceValue: string) {
-    this.elementConent = serviceValue;
+    this.elementContent = serviceValue;
   }
 
-  @HostBinding("textConent")
+  @HostBinding("textContent")
   elementContent: string;
 }
 
