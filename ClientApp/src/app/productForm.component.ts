@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, ViewEncapsulation } from "@angular/core";
+import { Component, Output, EventEmitter, ViewEncapsulation, Inject, SkipSelf } from "@angular/core";
 import { Product } from "./product.model";
 import { ProductFormGroup } from "./form.model";
 import { Model } from "./repository.model";
@@ -15,7 +15,7 @@ export class ProductFormComponent {
   newProduct: Product = new Product();
   formSubmitted: boolean = false;
 
-  constructor(private model: Model) { }
+  constructor(private model: Model, @Inject(VALUE_SERVICE) @SkipSelf() private serviceValue: string) { console.log("Wartość usługi: " + serviceValue); }
 
   //@Output("paNewProduct")
   //newProductEvent = new EventEmitter<Product>();
