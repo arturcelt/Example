@@ -7,7 +7,7 @@ import { VALUE_SERVICE } from "./valueDisplay.directive";
 @Component({
   selector: "paProductForm",
   templateUrl: "productForm.component.html",
-  providers: [{provide: VALUE_SERVICE, useValue: "pomarańcze"}]
+  viewProviders:  [{provide: VALUE_SERVICE, useValue: "pomarańcze"}]
   
 })
 export class ProductFormComponent {
