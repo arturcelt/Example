@@ -45,7 +45,7 @@ logger.minimumLevel = LogLevel.DEBUG;
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, CommonModule],
   declarations: [ProductComponent, PaAttrDirective, PaModel, PaStructureDirective, PaIteratorDirective, PaCellColor, PaCellColorSwitcher, ProductTableComponent, ProductFormComponent, PaToggleView, PaAddTaxPipe, PaCategoryFilterPipe, paDiscountDisplayComponent, PaDiscountEditorComponent, PaDiscountPipe, PaDiscountAmountDirective, PaDisplayValueDirective],
-  bootstrap: [ProductComponent]
+  bootstrap: [ProductFormComponent, ProductTableComponent]
 })
 export class AppModule { }
 
