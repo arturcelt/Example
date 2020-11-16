@@ -29,8 +29,8 @@ import { VALUE_SERVICE, PaDisplayValueDirective } from "./valueDisplay.directive
 
 
 
-//let logger = new LogService();
-//logger.minimumLevel = LogLevel.DEBUG;
+let logger = new LogService();
+logger.minimumLevel = LogLevel.DEBUG;
 
 
 @NgModule({
