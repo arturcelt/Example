@@ -30,6 +30,7 @@
     <None Remove="ClientApp\src\app\categoryFilter.pipe.ts" />
     <None Remove="ClientApp\src\app\cellColor.directive.ts" />
     <None Remove="ClientApp\src\app\cellColorSwitcher.directive.ts" />
+    <None Remove="ClientApp\src\app\common\common.module.ts" />
     <None Remove="ClientApp\src\app\component.ts" />
     <None Remove="ClientApp\src\app\datasource.model.ts" />
     <None Remove="ClientApp\src\app\discount.pipe.ts" />
@@ -58,6 +59,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\categoryFilter.pipe.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\cellColor.directive.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\cellColorSwitcher.directive.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\common.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\datasource.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\discount.pipe.ts" />
@@ -78,10 +80,6 @@
     <TypeScriptCompile Include="ClientApp\src\app\toggleView.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\twoway.directive.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\valueDisplay.directive.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ClientApp\src\app\common\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
