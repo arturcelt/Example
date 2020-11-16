@@ -1,6 +1,6 @@
 import { Component, Input, ViewChildren, QueryList } from "@angular/core";
-import { Model } from "./repository.model";
-import { Product } from "./product.model";
+import { Model } from "./model/repository.model";
+import { Product } from "./model/product.model";
 import { DiscountService } from "./discount.service";
 
 @Component({
