@@ -1,17 +1,14 @@
 import { Component, Input, ViewChildren, QueryList } from "@angular/core";
-import { Model } from "./model/repository.model";
-import { Product } from "./model/product.model";
-import { DiscountService } from "./common/discount.service";
+import { Model } from "../model/repository.model";
+import { Product } from "../model/product.model";
+import { DiscountService } from "../common/discount.service";
 
 @Component({
   selector: "paProductTable",
   templateUrl: "productTable.component.html"
 })
 export class ProductTableComponent {
-  //discounter: DiscountService = new DiscountService();
-  //@Input("model")
-  //dataModel: Model;
-
+  
   constructor(private dataModel: Model) { }
 
   getProduct(key: number): Product {

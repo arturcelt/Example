@@ -20,4 +20,4 @@ import { ModelModule } from "../model/model.module";
   declarations: [PaAddTaxPipe, PaAttrDirective, PaCategoryFilterPipe, PaCellColor, PaCellColorSwitcher, PaDiscountPipe, PaDiscountAmountDirective, PaIteratorDirective, PaStructureDirective, PaModel, PaDisplayValueDirective],
   exports: [PaAddTaxPipe, PaAttrDirective, PaCategoryFilterPipe, PaCellColor, PaCellColorSwitcher, PaDiscountPipe, PaDiscountAmountDirective, PaIteratorDirective, PaStructureDirective, PaModel, PaDisplayValueDirective]
 })
-export class CommonModule { }
+export class AppCommonModule { }
