@@ -26,7 +26,7 @@ import { SimpleDataSource } from "./datasource.model";
 import { Model } from "./repository.model";
 import { LogService, LOG_SERVICE, SpecialLogService, LogLevel, LOG_LEVEL } from "./log.service";
 import { VALUE_SERVICE, PaDisplayValueDirective } from "./valueDisplay.directive";
-
+import { ModelModule } from "./model/model.module";
 
 
 let logger = new LogService();
@@ -41,9 +41,9 @@ logger.minimumLevel = LogLevel.DEBUG;
     { provide: LOG_LEVEL, useValue: LogLevel.ERROR },
     { provide: "debugLevel", useExisting: LOG_LEVEL },
     { provide: VALUE_SERVICE, useValue: "jabłka"},
-    DiscountService, SimpleDataSource, Model, LogService
+    DiscountService, LogService
   ],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, CommonModule, ModelModule],
   declarations: [ProductComponent, PaAttrDirective, PaModel, PaStructureDirective, PaIteratorDirective, PaCellColor, PaCellColorSwitcher, ProductTableComponent, ProductFormComponent, PaToggleView, PaAddTaxPipe, PaCategoryFilterPipe, paDiscountDisplayComponent, PaDiscountEditorComponent, PaDiscountPipe, PaDiscountAmountDirective, PaDisplayValueDirective],
   bootstrap: [ProductFormComponent, ProductTableComponent]
 })
