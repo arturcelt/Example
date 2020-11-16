@@ -41,6 +41,7 @@
     <None Remove="ClientApp\src\app\iterator.directive.ts" />
     <None Remove="ClientApp\src\app\limit.formvalidator.ts" />
     <None Remove="ClientApp\src\app\log.service.ts" />
+    <None Remove="ClientApp\src\app\model\model.module.ts" />
     <None Remove="ClientApp\src\app\product.model.ts" />
     <None Remove="ClientApp\src\app\productForm.component.ts" />
     <None Remove="ClientApp\src\app\productTable.component.ts" />
@@ -68,6 +69,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\iterator.directive.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\limit.formvalidator.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\log.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\model\model.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\product.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\productForm.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\productTable.component.ts" />
