@@ -6,6 +6,7 @@ import { DiscountService } from "../common/discount.service";
 @Component({
   selector: "paProductTable",
   templateUrl: "productTable.component.html"
+  
 })
 export class ProductTableComponent {
   
